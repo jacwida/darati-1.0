@@ -1,0 +1,138 @@
+:root {
+	font: 110%/1.3 sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.content {
+	display: flex;
+}
+.table {
+	padding: 4em;
+}
+.table input {
+	padding: 0.7em;
+	font-size: 0.9em;
+}
+.table input::after {
+	content: 'invalid';
+}
+
+/* table input:focus-visible {
+	outline: none;
+} */
+
+.transforms {
+	flex: 1;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 3em;
+	width: 40%;
+	margin: 2em;
+	/* background: rgb(225, 236, 219); */
+	/* box-shadow: 0 0 0.3em rgb(49, 46, 46); */
+	border: 1px solid rgb(213, 220, 223);
+	border-radius: 2px;
+	animation: leftSlide 1s ease-out;
+}
+.transforms .item img {
+	width: 14em;
+	height: 13em;
+}
+.transforms .item h4 {
+	font-size: 0.8em;
+}
+.transforms .item button {
+	background: #58a
+		linear-gradient(hsla(0, 0%, 100%, 0.2), transparent);
+	border-radius: 0.2em;
+	padding: 0.3em 0.8em;
+	border: 1px solid #446d88;
+	color: white;
+	box-shadow: 0 1px 5px gray;
+	text-shadow: 0 -1px 1px #335166;
+	margin-top: 0.4em;
+	cursor: pointer;
+	font-size: 1.2em;
+	line-height: 1.2;
+}
+.transforms .item button.buy {
+	transition: background-color 200ms ease-in;
+	background: #c00;
+}
+.transforms .item button .buy:hover {
+	background: rgb(19, 82, 141);
+}
+.transforms .item button.book {
+	background-color: #6b0;
+}
+.right {
+	flex: 1;
+	background: url(/imgs/hp-local-desktop.jpg) no-repeat
+		center/cover;
+	padding: 1em;
+	background-origin: content-box;
+	opacity: 1;
+	transition: transform 200ms ease-out;
+}
+.right:hover {
+	transform: scale(1.1);
+	opacity: 0.5;
+}
+.right .trans {
+	margin: 2em 4em;
+	padding: 0.7em 1.2em;
+	background: white;
+	border: 10px solid hsla(0, 44%, 61%, 0.52);
+	inset: 0;
+}
+.right .trans a {
+	text-decoration: none;
+}
+.right .trans a::after {
+	content: ' 📌';
+	position: relative;
+	bottom: 4px;
+}
+.lists {
+	padding: 3em;
+}
+.lists ul {
+	list-style-type: '👉';
+	cursor: pointer;
+}
+.lists ul li::before {
+	content: '';
+	margin-right: 1em;
+}
+@keyframes leftSlide {
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+.spin {
+	height: 2em;
+}
+.lists .spin h6 {
+	margin: 2em;
+	/* animation: spin 300ms linear infinite; */
+}
+
+@keyframes spin {
+	/* 0% {
+		transform: rotate(60deg);
+	} */
+	100% {
+		transform: rotate(360turn);
+	}
+}
